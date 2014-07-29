@@ -46,7 +46,7 @@ if ($block_name == 'site_list'){
         array_push($rows, array($field1, $field2));
         //print($rows[0] . " - " . $rows[1]);
     }
-        print_r($rows);
+        print_r($rows[0]);
     // Table settings.
 $attributes['datatable_options'] = array(
   'bFilter'   => TRUE,
