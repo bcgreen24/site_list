@@ -44,7 +44,7 @@ if ($block_name == 'site_list'){
         //print($field1);
         //print($field2);
         array_push($rows, array($field1, $field2));
-        print($rows[0] . " - " . $rows[1]);
+        //print($rows[0] . " - " . $rows[1]);
     }
 
     // Table settings.
