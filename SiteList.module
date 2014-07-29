@@ -8,31 +8,23 @@ drupal_add_css(drupal_get_path('module', 'SiteList') .'./smoothness/styles.css')
 
 }
 
-
-
-
 //function _cleanblue_SiteList_site_list_block_visibility($block){
 //  return !drupal_is_front_page();
 //}
 
-
-
-
-
-
 function SiteList_help($path, $arg){
-if($path == 'admin/help#SiteList'){
-return t('Display a list of websites hosted at faculty.ucmerced.edu');
-}
+  if($path == 'admin/help#SiteList'){
+    return t('Display a list of websites hosted at faculty.ucmerced.edu');
+  }
 }
 
 function SiteList_block_info(){
-$blocks = array();
-$blocks['site_list'] = array(
-'info' => t('Display a list of websites hosted at faculty.ucmerced.edu.'),
-'cache' => DRUPAL_NO_CACHE,
-);
-return $blocks;
+  $blocks = array();
+  $blocks['site_list'] = array(
+  'info' => t('Display a list of websites hosted at faculty.ucmerced.edu.'),
+  'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
 }
 
 function SiteList_block_view($block_name = ''){
@@ -53,7 +45,7 @@ if ($block_name == 'site_list'){
         $field2 = $record['field_ucm_site_description_value'];
         array_push($rows, array($field1, $field2));
     }
-    
+
     // Table settings.
 $attributes['datatable_options'] = array(
   'bFilter'   => TRUE,
@@ -80,7 +72,7 @@ $header = array(
     ),
   ),
 );
- 
+
 // Render using Drupal's render API.
 $build['datatable'] = array(
   '#theme' => 'datatable',
@@ -88,7 +80,7 @@ $build['datatable'] = array(
   '#rows' => $rows,
   '#attributes' => $attributes,
 );
- 
+
 // Or, render using a theme function.
 $variables = array(
   'attributes' => $attributes,
