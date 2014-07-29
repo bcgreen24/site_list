@@ -41,12 +41,10 @@ if ($block_name == 'site_list'){
         while($record = $result->fetchAssoc()){
           $field1 = '<a href="' . $record['field_site_name_url'] . '">' . $record['field_site_name_title'] . '</a>';
           $field2 = $record['field_ucm_site_description_value'];
-          
-          
           array_push($rows, array($field1, $field2));
           }
-        
-    // Table settings.
+
+// Table settings.
 $attributes['datatable_options'] = array(
   'bFilter'   => TRUE,
   'bInfo'     => TRUE,
@@ -74,12 +72,12 @@ $header = array(
 );
 
 // Render using Drupal's render API.
-//$build['datatable'] = array(
-//  '#theme' => 'datatable',
-//  '#header' => $header,
-//  '#rows' => $rows,
-//  '#attributes' => $attributes,
-//);
+$build['datatable'] = array(
+  '#theme' => 'datatable',
+  '#header' => $header,
+  '#rows' => $rows,
+  '#attributes' => $attributes,
+);
 
 // Or, render using a theme function.
 $variables = array(
@@ -92,7 +90,7 @@ $content .= theme('datatable', $variables);
     $block = array (
     'content' => $content,
     );
-
+    return $block;
     }
 }
 ?>
