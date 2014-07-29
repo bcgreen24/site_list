@@ -39,14 +39,12 @@ if ($block_name == 'site_list'){
           ->orderBy('field_site_name_title', 'ASC');
     $result = $query->execute();
         while($record = $result->fetchAssoc()){
-        $field1 = '<a href="' . $record['field_site_name_url'] . '">' . $record['field_site_name_title'] . '</a>';
-        $field2 = $record['field_ucm_site_description_value'];
-        //print($field1);
-        //print($field2);
-        array_push($rows, array($field1, $field2));
-        //print($rows[0] . " - " . $rows[1]);
-    }
-        print_r($rows[1]);
+          $field1 = '<a href="' . $record['field_site_name_url'] . '">' . $record['field_site_name_title'] . '</a>';
+          $field2 = $record['field_ucm_site_description_value'];
+          array_push($rows, array($field1, $field2));
+          }
+        print($field1 + "<br/>");
+        print($field2 + "<br/>");
     // Table settings.
 $attributes['datatable_options'] = array(
   'bFilter'   => TRUE,
