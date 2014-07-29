@@ -29,6 +29,7 @@ function SiteList_block_info(){
 
 function SiteList_block_view($block_name = ''){
    // drupal_add_js
+    print("Test");
 if ($block_name == 'site_list'){
     $rows = array();
     $content = '<h2>Website Directory</h2><br/>';
