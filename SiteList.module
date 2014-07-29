@@ -38,11 +38,11 @@ if ($block_name == 'site_list'){
           ->fields('n', array('field_site_name_title', 'field_site_name_url'))
           ->orderBy('field_site_name_title', 'ASC');
     $result = $query->execute();
-    print(count($result));  
         while($record = $result->fetchAssoc()){
-
         $field1 = '<a href="' . $record['field_site_name_url'] . '">' . $record['field_site_name_title'] . '</a>';
         $field2 = $record['field_ucm_site_description_value'];
+        print($field1);
+        print($field2);
         array_push($rows, array($field1, $field2));
     }
 
