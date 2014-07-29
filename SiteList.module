@@ -41,11 +41,11 @@ if ($block_name == 'site_list'){
         while($record = $result->fetchAssoc()){
           $field1 = '<a href="' . $record['field_site_name_url'] . '">' . $record['field_site_name_title'] . '</a>';
           $field2 = $record['field_ucm_site_description_value'];
-          print($field1 + "<br/>");
-          print($field2 + "<br/>");
+          
+          
           array_push($rows, array($field1, $field2));
           }
-        
+        print_r($rows);
     // Table settings.
 $attributes['datatable_options'] = array(
   'bFilter'   => TRUE,
